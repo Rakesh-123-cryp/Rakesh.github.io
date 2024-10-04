@@ -1,2 +1,2 @@
 # Rakesh.github.io
-Website for Research Projects
+Personal Website
