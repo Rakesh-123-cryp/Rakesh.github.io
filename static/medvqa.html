@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <title>Nerfies: Deformable Neural Radiance Fields</title> -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/bulma.min.css">
+  <link rel="stylesheet" href="./css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="icon" href="./images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./js/fontawesome.all.min.js"></script>
+  <script src="./js/bulma-carousel.min.js"></script>
+  <script src="./js/bulma-slider.min.js"></script>
+  <script src="./js/index.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">GANESH: Generalizable NeRF for Lensless Imaging</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Rakesh Raj</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="">Akshat Kailmal</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="">K.V. Badhrinarayanan</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://vinayak-vg.github.io">Vinayak Gupta</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=IQZ4jIQAAAAJ&hl=en">Rohit Choudhary</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=nLYLiE8AAAAJ&hl=en">Chandrakala.S</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://www.ee.iitm.ac.in/kmitra/">Kaushik Mitra</a><sup>2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Shiv Nadar University Chennai,</span>
+            <span class="author-block"><sup>2</sup>IIT Madras</span>
+          </div>
+
+          <!-- <div class="text"></div>
+            <p>Under review in WACV 2025,</p>
+            <p>All the links will be activated on acceptence of the paper</p>
+          </div> -->
+          <h2 class="subtitle has-text-centered">
+            <b style="color:tomato;">WACV 2025</b><br><br>
+          </h2>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2411.04810"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2411.04810"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link.
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./videos/teaser.mp4"
+                type="video/mp4">
+      </video> -->
+      <h2 class="subtitle has-text-centered">
+        <!-- <b style="color:tomato;">!! The links will be updated after the acceptence of the paper !!</b><br><br> -->
+        <span class="dnerf">GANESH</span> refines and renders 3D view of corrupted lensless captures<br>
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <center><img src="./assets/Video_Results.gif" alt="Sample GIFs" style="width:1000px;height:700px;"></center> -->
+<!-- <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+  <source src="./assests/Video_Results.mp4"
+          type="video/mp4">
+</video> -->
+<center>
+<video width="1000px" 
+           height="900px" 
+           controls="controls" autoplay loop>
+        <source src="./assets/Video_Results.mp4"
+                type="video/mp4" />
+</video>
+</center>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Lensless imaging offers a significant opportunity to develop ultra-compact cameras by removing
+            the conventional bulky lens system. However, without a focusing element, the sensor's output is 
+            no longer a direct image but a complex multiplexed scene representation.
+          </p>
+          <p>
+            Traditional methods have attempted to address this challenge by employing learnable inversions 
+            and refinement models, but these methods are primarily designed for 2D reconstruction and do not 
+            generalize well to 3D reconstruction. We introduce GANESH, a novel framework designed to enable 
+            simultaneous refinement and novel view synthesis from multi-view lensless images. Unlike existing 
+            methods that require scene-specific training, our approach supports on-the-fly inference without 
+            retraining on each scene. Moreover, our framework allows us to tune our model to specific scenes, 
+            enhancing the rendering and refinement quality. To facilitate research in this area, we also present 
+            the first multi-view lensless dataset, LenslessScenes. Extensive experiments demonstrate that our 
+            method outperforms current approaches in reconstruction accuracy and refinement quality. The code 
+            and dataset will be released upon acceptance.
+          </p>
+          <br>
+          <h2 class="title is-3"><center>Contributions</center></h2>
+          <ul>
+            <li>We present a novel framework that simultaneously achieves refinement and rendering of lensless captures.</li>
+            <li>Our approach is generalizable, i.e., it can render views on-the-fly without any need for scene-specific training.</li>
+            <li>We present \textit{LenslessScenes}, the first dataset of multi-view lensless captures.</li>
+            <li>Our experimental results demonstrate that the proposed method outperforms existing techniques that separately 
+              handle refinement and novel view synthesis.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<center><img src="./assets/modelarch.png" alt="Model Architecture" style="width:1000px;height:300px;"></center>
+<br>
+
+<section class="section"></section>
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3"><b>GANESH: Method</b></h2>
+        <div class="content has-text-justified">
+          <p>
+            A novel framework to perform generalizable novel view synthesis from lensless captures. 
+            The task is to generate refined novel views from <b>N</b> calibrated multi-view lensless images of a scene, with 
+            known camera poses, while ensuring the model generalizes to unseen scenes. Our method builds upon existing 
+            GNT architecture but conditions the scene representation and rendering processes based on the captured multi-view 
+            lensless images. First, these lensless captures are passed through a simple Wiener deconvolution filter to 
+            obtain a coarse estimate of the scene. The deconvolved outputs of this filter are then passed on to a 
+            generalizable view synthesis model, which performs both refinement and rendering simultaneously. Such a 
+            pipeline can be trained end-to-end on synthetically generated scenes and directly transferred to any real 
+            scene without additional optimization.
+          </p>
+        </div>
+        <br>
+
+        <h2 class="title is-3"><b>Coarse Estimation</b></h2>
+        <div class="content has-text-justified">
+          <p>
+            Given the global multiplexing of lensless captures, we cannot directly feed them into the radiance 
+            fields model to render novel views. Hence, to reconstruct the RGB image from the lensless captures, 
+            these need to be deconvolved with the lensless camera's point spread function (PSF) to obtain coarse 
+            reconstructed images. For this, we utilize wiener deconvolution, which accepts the lensless capture 
+            and the point spread function as the input and returns the reconstructed image.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br><br>
+<center><h2 class="title is-3"><b>Scene Specific Training Results</b></h2></center>
+<br>
+<center><img src="./assets/scene-specific.png" alt="Scene" style="width:1200px;height:650px;"></center>
+<br>
+<br>
+<center><h2 class="title is-3"><b>Generalized Training Results</b></h2></center>
+<br>
+<center><img src="./assets/generalized.png" alt="Scene" style="width:1200px;height:400px;"></center>
+<br>
+<br>
+<center><h2 class="title is-3"><b>Real-times inference Results</b></h2></center>
+<br>
+<center><img src="./assets/realtime.png" alt="Scene" style="width:1200px;height:750px;"></center>
+
+
+<section class="section"></section>
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3"><b>Supplementary</b></h2>
+        <div class="content has-text-justified">
+          <p>
+            We first analyzed the influence of PSF structure by comparing the results of PSFs in the RGB scale 
+            with those of binary PSFs, where only values of 0 and 1 were used. The binary PSF was derived by 
+            converting the original grayscale PSF into binary values, with thresholding applied to assign the 
+            binary values. Interestingly, the outputs produced by the RGB-scale PSF closely resembled those from 
+            the binary PSF, indicating that color information in the PSF has minimal impact on image reconstruction.
+            This observation highlights that the structural characteristics of the PSF play a more significant role 
+            in decoding the image than the color properties. Thus, focusing on the PSF's shape, rather than its color 
+            composition, may lead to more effective results in the context of 3D image reconstruction.
+          </p>
+          <br>
+          <center><img src="./assets/Psf_1.png" alt="Scene" style="width:1200px;height:300px;"></center>
+        </div>
+        <br>
+        <div class="content has-text-justified">
+          <p>
+            In addition to the PSF structure, we also studied the effects of PSF size. Smaller PSFs were generated by 
+            cropping the original PSF, and the resulting outputs were compared. These experiments provided insights into 
+            how varying PSF dimensions influence the quality of reconstructed images, highlighting importance of optimizing 
+            both PSF structure and size for improved lensless imaging performance. We cropped smaller samples from the 
+            original PSF, which had a size of 1518x2012. By examining PSFs of various dimensions, we observed notable 
+            differences in how image information was processed and reconstructed.
+          </p>
+          <br>
+          <center><img src="./assets/Psf_2.png" alt="Scene" style="width:1200px;height:300px;"></center>
+        </div>
+        <br>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div>
+<br>
+<center><h2 class="title is-3"><b>More Results</b></h2><br></center>
+<center><img src="./assets/gallery.png" alt="Scene" style="width:1200px;height:400px;"></center>
+<br>
+<br>
+<center><img src="./assets/Scene Specific supp.png" alt="Scene" style="width:1000px;height:700px;"></center>
+<br>
+<br>
+</div>
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop"> -->
+
+    <!-- Concurrent Work. -->
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+            both use deformation fields to model non-rigid scenes.
+          </p>
+          <p>
+            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+          </p>
+          <p>
+            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Concurrent Work. -->
+
+  <!-- </div>
+</section> -->
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Raj, Rakesh and Kaimal, Akshat and K.V. , Badhrinarayanan and Gupta , Vinayak and Rohit, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {GANESH: Generalizable NeRF for Lensless Imaging},
+  journal   = {Submitted to WACV},
+  year      = {2025},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
