@@ -83,32 +83,22 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">GANESH: Generalizable NeRF for Lensless Imaging</h1>
+          <h1 class="title is-1 publication-title">MedGRIM: Enhanced Zero-shot Medical VQA using prompt-embedded Multimodal GraphRAG</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="">Rakesh Raj</a><sup>1*</sup>,</span>
+              <a href="https://rakesh-123-cryp.github.io/Rakesh.github.io/">Rakesh Raj</a><sup>1*</sup>,</span>
             <span class="author-block">
               <a href="">Akshat Kailmal</a><sup>1*</sup>,</span>
             <span class="author-block">
-              <a href="">K.V. Badhrinarayanan</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://vinayak-vg.github.io">Vinayak Gupta</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=IQZ4jIQAAAAJ&hl=en">Rohit Choudhary</a><sup>2</sup>,
+              <a href="">Hashim Faisal</a><sup>1*</sup>,
             </span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=nLYLiE8AAAAJ&hl=en">Chandrakala.S</a><sup>1</sup>
             </span>
-            <span class="author-block">
-              <a href="https://www.ee.iitm.ac.in/kmitra/">Kaushik Mitra</a><sup>2</sup>,
-            </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Shiv Nadar University Chennai,</span>
-            <span class="author-block"><sup>2</sup>IIT Madras</span>
+            <span class="author-block"><sup>1</sup>Shiv Nadar University Chennai</span>
           </div>
 
           <!-- <div class="text"></div>
@@ -116,13 +106,13 @@
             <p>All the links will be activated on acceptence of the paper</p>
           </div> -->
           <h2 class="subtitle has-text-centered">
-            <b style="color:tomato;">WACV 2025</b><br><br>
+            <b style="color:tomato;">Submitted to CVPR 2025<br>Links will be updated on acceptance</b><br><br>
           </h2>
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2411.04810"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -131,7 +121,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2411.04810"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -186,7 +176,7 @@
       </video> -->
       <h2 class="subtitle has-text-centered">
         <!-- <b style="color:tomato;">!! The links will be updated after the acceptence of the paper !!</b><br><br> -->
-        <span class="dnerf">GANESH</span> refines and renders 3D view of corrupted lensless captures<br>
+        <span class="dnerf">MedGRIM</span> is an interactive medical AI Agent with transparent thought process<br>
       </h2>
     </div>
   </div>
@@ -255,14 +245,14 @@
   <source src="./assests/Video_Results.mp4"
           type="video/mp4">
 </video> -->
-<center>
+<!-- <center>
 <video width="1000px" 
            height="900px" 
            controls="controls" autoplay loop>
         <source src="./assets/Video_Results.mp4"
                 type="video/mp4" />
 </video>
-</center>
+</center> -->
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -271,31 +261,27 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
-            Lensless imaging offers a significant opportunity to develop ultra-compact cameras by removing
-            the conventional bulky lens system. However, without a focusing element, the sensor's output is 
-            no longer a direct image but a complex multiplexed scene representation.
-          </p>
-          <p>
-            Traditional methods have attempted to address this challenge by employing learnable inversions 
-            and refinement models, but these methods are primarily designed for 2D reconstruction and do not 
-            generalize well to 3D reconstruction. We introduce GANESH, a novel framework designed to enable 
-            simultaneous refinement and novel view synthesis from multi-view lensless images. Unlike existing 
-            methods that require scene-specific training, our approach supports on-the-fly inference without 
-            retraining on each scene. Moreover, our framework allows us to tune our model to specific scenes, 
-            enhancing the rendering and refinement quality. To facilitate research in this area, we also present 
-            the first multi-view lensless dataset, LenslessScenes. Extensive experiments demonstrate that our 
-            method outperforms current approaches in reconstruction accuracy and refinement quality. The code 
-            and dataset will be released upon acceptance.
+          An ensemble of trained multimodal encoders and Vision-Language Models (VLMs) has become a standard approach for 
+          Visual Question Answering (VQA) tasks. However, such naive models often fail to produce responses with the detailed 
+          precision necessary for complex, domain-specific applications such as medical VQA. Our representation model, 
+          <b>BIND</b>: <b>B</b>LIVA <b>In</b>tegrated with <b>D</b>ense Encoding, extends prior multimodal work by 
+          refining the joint embedding space through dense, query-token-based encodings, inspired by contrastive pretraining techniques. 
+          This refined encoder powers <b>Med-GRIM</b>, a model designed for medical VQA tasks that leverages graph-based retrieval 
+          and prompt engineering to integrate domain-specific knowledge. Rather than relying on compute-heavy fine-tuning of vision 
+          and language models on specific datasets, Med-GRIM applies a low-compute, modular workflow with small language models (SLMs) 
+          for efficiency. Med-GRIM employs prompt-based retrieval to dynamically inject relevant knowledge, ensuring both accuracy and 
+          robustness in its responses. By assigning distinct roles to each agent within the VQA system, Med-GRIM achieves large 
+          language model performance at a fraction of the computational cost. Additionally, to support scalable research in zero-shot 
+          multimodal medical applications, we introduce DermaGraph, a novel Graph-RAG dataset comprising diverse dermatological 
+          conditions. This dataset facilitates both multimodal and unimodal querying. The code and dataset will be released on acceptance.
           </p>
           <br>
           <h2 class="title is-3"><center>Contributions</center></h2>
           <ul>
-            <li>We present a novel framework that simultaneously achieves refinement and rendering of lensless captures.</li>
-            <li>Our approach is generalizable, i.e., it can render views on-the-fly without any need for scene-specific training.</li>
-            <li>We present \textit{LenslessScenes}, the first dataset of multi-view lensless captures.</li>
-            <li>Our experimental results demonstrate that the proposed method outperforms existing techniques that separately 
-              handle refinement and novel view synthesis.</li>
+            <li>We propose a novel multimodal representation learning architecture that advances performance on state-of-the-art datasets in multimodal learning.</li>
+            <li>OWe introduce DermaGraph, a multimodal, graph-structured dataset designed for RAG tasks in dermatology, which also supports unimodal input scenarios.</li>
+            <li>We develop a zero-shot learning pipeline specifically tailored for medical query processing, enabling accurate and efficient responses to medical inquiries.</li>
+            <li>We design a graph filtering mechanism for improved diagnostic accuracy in medical applications.</li>
           </ul>
         </div>
       </div>
@@ -316,7 +302,7 @@
   </div>
 </section>
 
-<center><img src="./assets/modelarch.png" alt="Model Architecture" style="width:1000px;height:300px;"></center>
+<center><img src="./assets/main_arch.png" alt="Model Architecture" style="width:1000px;height:400px;"></center>
 <br>
 
 <section class="section"></section>
@@ -324,23 +310,20 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3"><b>GANESH: Method</b></h2>
+        <h2 class="title is-3"><b>MedGRIM: Method</b></h2>
         <div class="content has-text-justified">
           <p>
-            A novel framework to perform generalizable novel view synthesis from lensless captures. 
-            The task is to generate refined novel views from <b>N</b> calibrated multi-view lensless images of a scene, with 
-            known camera poses, while ensuring the model generalizes to unseen scenes. Our method builds upon existing 
-            GNT architecture but conditions the scene representation and rendering processes based on the captured multi-view 
-            lensless images. First, these lensless captures are passed through a simple Wiener deconvolution filter to 
-            obtain a coarse estimate of the scene. The deconvolved outputs of this filter are then passed on to a 
-            generalizable view synthesis model, which performs both refinement and rendering simultaneously. Such a 
-            pipeline can be trained end-to-end on synthetically generated scenes and directly transferred to any real 
-            scene without additional optimization.
+            Med-GRIM integrates multimodal inputs—such as images and descriptions—through a series of specialized 
+            modules, including BIND, graph retrieval layers and prompt injection . The model first assesses possible 
+            conditions, ranking them by probability, then dynamically retrieves relevant data and refines responses 
+            iteratively. This approach allows it to present condition-agnostic insights and tailor responses based 
+            on user feedback. Through iterative filtering, Med-GRIM engages users with clarifying questions, adapting 
+            its answers based on specific input cues, as shown in the step-by-step reasoning for diagnosing conditions.
           </p>
         </div>
         <br>
 
-        <h2 class="title is-3"><b>Coarse Estimation</b></h2>
+        <!-- <h2 class="title is-3"><b>Coarse Estimation</b></h2>
         <div class="content has-text-justified">
           <p>
             Given the global multiplexing of lensless captures, we cannot directly feed them into the radiance 
@@ -349,78 +332,73 @@
             reconstructed images. For this, we utilize wiener deconvolution, which accepts the lensless capture 
             and the point spread function as the input and returns the reconstructed image.
           </p>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
 </section>
 
 <br><br>
-<center><h2 class="title is-3"><b>Scene Specific Training Results</b></h2></center>
-<br>
-<center><img src="./assets/scene-specific.png" alt="Scene" style="width:1200px;height:650px;"></center>
-<br>
-<br>
-<center><h2 class="title is-3"><b>Generalized Training Results</b></h2></center>
-<br>
-<center><img src="./assets/generalized.png" alt="Scene" style="width:1200px;height:400px;"></center>
-<br>
-<br>
-<center><h2 class="title is-3"><b>Real-times inference Results</b></h2></center>
-<br>
-<center><img src="./assets/realtime.png" alt="Scene" style="width:1200px;height:750px;"></center>
-
-
-<section class="section"></section>
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3"><b>Supplementary</b></h2>
-        <div class="content has-text-justified">
-          <p>
-            We first analyzed the influence of PSF structure by comparing the results of PSFs in the RGB scale 
-            with those of binary PSFs, where only values of 0 and 1 were used. The binary PSF was derived by 
-            converting the original grayscale PSF into binary values, with thresholding applied to assign the 
-            binary values. Interestingly, the outputs produced by the RGB-scale PSF closely resembled those from 
-            the binary PSF, indicating that color information in the PSF has minimal impact on image reconstruction.
-            This observation highlights that the structural characteristics of the PSF play a more significant role 
-            in decoding the image than the color properties. Thus, focusing on the PSF's shape, rather than its color 
-            composition, may lead to more effective results in the context of 3D image reconstruction.
-          </p>
-          <br>
-          <center><img src="./assets/Psf_1.png" alt="Scene" style="width:1200px;height:300px;"></center>
-        </div>
-        <br>
-        <div class="content has-text-justified">
-          <p>
-            In addition to the PSF structure, we also studied the effects of PSF size. Smaller PSFs were generated by 
-            cropping the original PSF, and the resulting outputs were compared. These experiments provided insights into 
-            how varying PSF dimensions influence the quality of reconstructed images, highlighting importance of optimizing 
-            both PSF structure and size for improved lensless imaging performance. We cropped smaller samples from the 
-            original PSF, which had a size of 1518x2012. By examining PSFs of various dimensions, we observed notable 
-            differences in how image information was processed and reconstructed.
-          </p>
-          <br>
-          <center><img src="./assets/Psf_2.png" alt="Scene" style="width:1200px;height:300px;"></center>
-        </div>
-        <br>
-
+<div class="container is-max-desktop">
+  <!-- Abstract. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3"><b>Pompt Templates Used</b></h2>
+      <div class="content has-text-justified">
+        <p>It emphasizes structuring and framing instructional prompts to align closely with the patterns and context the model was trained on. Leveraging this approach, we employ a custom-designed prompt template tailored specifically to our application.</p>
+        <p>Some essential considerations when creating an effective prompt template include:</p>
+        <ul>
+            <li><strong>Be as specific as possible:</strong> Providing clear, specific prompts reduces ambiguity, enabling the AI to better understand the query and its context.</li>
+            <li><strong>Specify the level of detail required:</strong> Indicate preferences for the response format, such as using bullet points, specifying the number of questions, or defining paragraph limits.</li>
+            <li><strong>Offer positive guidance:</strong> Focus on explaining what the LLM should do, rather than what it should not do, to maintain clarity and direction.</li>
+        </ul>
       </div>
     </div>
   </div>
-</section>
-
-<div>
-<br>
-<center><h2 class="title is-3"><b>More Results</b></h2><br></center>
-<center><img src="./assets/gallery.png" alt="Scene" style="width:1200px;height:400px;"></center>
-<br>
-<br>
-<center><img src="./assets/Scene Specific supp.png" alt="Scene" style="width:1000px;height:700px;"></center>
-<br>
-<br>
 </div>
+<br>
+<center>
+  <img src="./assets/prompt.png" alt="Scene" style="width:500px;height:500px;">
+  <img src="./assets/prompt_template.png" alt="Scene" style="width:500px;height:500px;">
+</center>
+<br>
+<center>
+  <h2 class="title is-3"><b>Demo Video</b></h2>
+  <video width="1000px" 
+             height="900px" 
+             controls="controls" autoplay loop>
+          <source src="./assets/media1.mp4"
+                  type="video/mp4" />
+  </video>
+<br>
+<!-- <center></center> -->
+<br>
+<div class="container is-max-desktop">
+  <!-- Abstract. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3"><b>Dataset Overview</b></h2>
+      <div class="content has-text-justified">
+        <p>These connections illustrate the semantic relationships across nodes, linking dermatological conditions
+          with overlapping attributes, such as shared symptoms, similar underlying causes, or common treatment strategies.
+           For instance, conditions with symptoms like redness or inflammation may be grouped together, creating meaningful
+            clusters that aid in understanding correlations between different conditions. Similarly, treatment strategies
+             that apply to multiple conditions, such as the use of topical steroids or antihistamines, establish additional
+              connections between nodes. This interconnected design transforms the dataset into a dynamic knowledge graph,
+               where the relationships between nodes provide rich context for various tasks.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+
+<center><img src="./assets/multiple.png" alt="Scene" style="width:700px;height:500px;"></center><br>
+<center><img src="./assets/content_dataset.jpeg" alt="Scene" style="width:900px;height:300px;"></center>
+<br>
+<br>
+<center><h2 class="title is-3"><b>Qualitative Result</b></h2></center>
+<br>
+<center><img src="./assets/qualitative.png" alt="Scene" style="width:1200px;height:400px;"></center>
 
 
 <!-- <section class="section">
